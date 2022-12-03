@@ -5,6 +5,8 @@ My take at the [AoC2022](https://adventofcode.com), using [clojure](https://cloj
 I used the excellent [Advent of Clerk](https://github.com/nextjournal/advent-of-clerk) template as a starter; you should check it out if you
 want to participate, or you can tag along here for as long as I'll manage to stick to the task.
 
+If you want to enjoy the Clerk notebooks, they're published in the [Clerk Garden](https://github.clerk.garden/bru/advent-of-code-2022).
+
 ## Usage
 
 Fork & clone this repo, make sure you have [Clojure
