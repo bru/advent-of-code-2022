@@ -1,6 +1,6 @@
 # 🎄 Advent of Code 2022
 
-My take at the [AoC2022](https://adventofcode), using [clojure](https://clojure.org) and [Clerk](https://clerk.vision).
+My take at the [AoC2022](https://adventofcode.com), using [clojure](https://clojure.org) and [Clerk](https://clerk.vision).
 
 I used the excellent [Advent of Clerk](https://github.com/nextjournal/advent-of-clerk) template as a starter; you should check it out if you
 want to participate, or you can tag along here for as long as I'll manage to stick to the task.
