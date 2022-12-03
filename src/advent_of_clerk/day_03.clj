@@ -46,16 +46,16 @@
     (set/intersection a-set b-set)))
 
 ;; remember, just one duplicate per rucksack
-(defn find-duplicate [a b]
+(defn find-duplicate [[a b]]
   (first (find-duplicates a b)))
 
 ;; let's test it
-(apply find-duplicate (first rucksack-compartments))
+(find-duplicate (first rucksack-compartments))
 
 ;; cool, how about the rest of the rucksacks?
 
 (def all-misplaced-items
-  (map #(apply find-duplicate %) rucksack-compartments))
+  (map find-duplicate rucksack-compartments))
 
 ;; and finally, what's the priority of these items? Let's first calculate a
 ;; single item's priority.
@@ -95,14 +95,16 @@
 
 ;; ...but first, let's build the facility to identify the badge of a given group
 
-(defn find-badge [a b c]
+(defn find-badge [[a b c]]
   (let [a-set (set a)
         b-set (set b)
         c-set (set c)]
     (first (set/intersection a-set b-set c-set))))
 
-(find-badge "zap" "asd" "aaaaargh")
+(find-badge ["zap" "asd" "aaaaargh"])
 
+;; now we can use that recursive loop to consume the pile of rucksacks, 3 at a
+;; time, and find the badge in the group.
 (def all-badges
   (loop [rucksack-pile rucksacks
          badges []]
@@ -110,8 +112,21 @@
       badges
 
       (let [[this-group-sacks other-rucksacks] (split-at 3 rucksack-pile)
-            this-badge (apply find-badge this-group-sacks)]
+            this-badge (find-badge this-group-sacks)]
         (recur other-rucksacks (conj badges this-badge))))))
 
 (def badges-priority
   (u/style-result (reduce + (map item-priority all-badges))))
+
+;; having scratched the recursive itch, let's now do the same thing with my
+;; usual map reduce approach (when all you have is a hammer... right?)
+;;
+;; ...but look at how neat is it
+(->> rucksacks
+     (partition 3)
+     (map find-badge)
+     (map item-priority)
+     (reduce +)
+     (u/style-result))
+
+;; next step, transducers? Another time maybe.
