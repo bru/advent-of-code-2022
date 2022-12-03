@@ -54,6 +54,7 @@
 
 (def elves (parse-manifest manifest))
 
+;; let's see how that looks like in a table:
 (clerk/table elves)
 
 ;; We've been asked to find the Elf carrying the most calories, so let's sort
@@ -61,10 +62,12 @@
 (def sorted-elves
   (reverse (sort-by :tot elves)))
 
+;; ...and as a table:
 (clerk/table sorted-elves)
 
-;; and the winner will be at the top of the list; the actual Calories are to be
-;; found under the `:tot` key.
+;; and the winner will be at the top of the list.
+;;
+;; The actual Calories are to be found under its `:tot` key.
 (def top-calories-elf
     (u/style-result (:tot (first sorted-elves))))
 
