@@ -1,4 +1,4 @@
-;; # 🎄 Advent of Clerk
+;; # 🎄 Advent of Code 2022
 
 ;; [Advent of Code](https://adventofcode.com) with
 ;; [Clerk](https://clerk.vision).
