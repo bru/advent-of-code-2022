@@ -36,6 +36,15 @@ In the case of Emacs, add the following to your config:
 
 and then use `M-return` to update the clerk view in the browser.
 
+**NOTE:** remember to connect the repl and start the `clerk` server though.
+To do that, you can eval the following code (you can find it in `user.clj`):
+
+``` clojure
+(clerk/serve! {:port 7878 :browse true})
+```
+
+This will also have the effect of opening the clerk page in your default browser.
+
 ## Personal notes
 
 This is supposed to be a cosy pastime in the days leading to the winter holidays.
