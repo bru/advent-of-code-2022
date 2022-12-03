@@ -50,7 +50,10 @@ This will also have the effect of opening the clerk page in your default browser
 This is supposed to be a cosy pastime in the days leading to the winter holidays.
 
 In that spirit, I'm exercising my right to fidget, explore ideas, exercise parts
-of the standard library and techniques I'd like to dust off, and in general I'm
-**not expecting my solutions to be regarded as best practices or even good examples
-of idiomatic clojure**. If you're looking for best in class, keep looking: ultimately
-here we're just **having fun**.
+of the standard library and techniques I'd like to dust off, and venture (or not)
+into long winded commentary about my train of thoughts.
+
+in general I'm **not expecting my solutions to be regarded as best practices or even good examples
+of idiomatic clojure**.
+
+If you're looking for best in class, keep looking: ultimately here we're just **having fun**.
