@@ -48,7 +48,7 @@
 ;; excessive...
 ;;
 ;; we can solve the "is a contained wihin b or vice-versa?" conundrum with
-;; a simple cond
+;; a simple `cond`
 (defn fully-enclosed? [[[from-a to-a] [from-b to-b]]]
   (cond
     ; if the two ranges have either the lower or the upper end in common,
@@ -79,9 +79,9 @@
 ;; We can tweak `fully-enclosed?` above to return just that.
 
 (defn overlap? [[[from-a to-a] [from-b to-b]]]
-  (cond
-    (<= from-a from-b) (>= to-a from-b)
-    :else (>= to-b from-a)))
+  (if (<= from-a from-b)
+    (>= to-a from-b)
+    (>= to-b from-a)))
 
 (->> assignments
      (map-indexed #(when (overlap? %2) %1))
