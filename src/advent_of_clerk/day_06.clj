@@ -51,7 +51,7 @@
 ;;
 ;; otherwise, it's just another loop in the life of the algorithm, and its
 ;; work is to check if the current character has been previously seen within
-;; the previous `marker-length` characters. If so, it invalidates the current
+;; the previous `counter` characters. If so, it invalidates the current
 ;; marker assumption, and it proceeds resetting the counter to the difference
 ;; between the cursor and the position where the character was previously seen
 ;; at.
