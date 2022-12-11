@@ -4,6 +4,8 @@
             [advent-of-clerk.utils :as u]
             [clojure.string :as string]))
 
+;; today's daily brief is very long, it's best consumed at the [AoC's site](https://adventofcode.com/2022/day/10).
+
 (def sample-input
   (string/split-lines (slurp "inputs/day-10-sample.txt")))
 

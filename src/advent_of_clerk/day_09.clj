@@ -137,6 +137,7 @@
     distinct
     count)
 
-(-> (tail-breadcrumbs input 9)
-    distinct
-    count)
+(u/style-result
+  (-> (tail-breadcrumbs input 9)
+      distinct
+      count))
