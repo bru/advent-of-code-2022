@@ -184,12 +184,12 @@
 
 (defn safeguard [state]
   (let [monkeys (:monkeys @state)
-        test-multiples (->> monkeys
-                            vals
-                            (map :test-n)
-                            (reduce * 1))]
+        tests-lcm (->> monkeys
+                       vals
+                       (map :test-n)
+                       (reduce * 1))]
     (fn [n]
-      (mod n test-multiples))))
+      (mod n tests-lcm))))
 
 (let [state (atom (parse-input sample-input))
       relief-fn (safeguard state)]
